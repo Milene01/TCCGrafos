@@ -1,6 +1,6 @@
 import heapq
 
-def dijkstra_with_heuristic(grafo, start, vertices):
+def dijkstra_pond(grafo, start, vertices):
     # Número de vértices do grafo, adicionei porque ele tava pegando vértice 1 como 0, então não chegava até ao 71
     num_vertices = len(grafo) + 1
 
@@ -42,11 +42,11 @@ def dijkstra_with_heuristic(grafo, start, vertices):
                 if vizinho[1] == 0:
                     continue
 
-                # Calcula a heurística
-                heuristic = calculate_heuristic(vizinho[0])
+                # Calcula a ponderação
+                pond = calculate_pond(vizinho[0])
 
                 # Calcula a nova distância até o vizinho
-                new_dist = dist[current_vertex] + vizinho [1] + heuristic
+                new_dist = dist[current_vertex] + vizinho [1] + pond
 
                 # Verifica se a nova distância é menor que a armazenada
                 if vizinho and vizinho[0] < len(dist):
@@ -61,7 +61,7 @@ def dijkstra_with_heuristic(grafo, start, vertices):
     print("Resultado Final é = ",resultado)
 
 #Função da Heurística
-def calculate_heuristic(vertice):
+def calculate_pond(vertice):
     result = 0
     
     #ruas com semáforo
@@ -156,4 +156,4 @@ grafo = {
 start_vertex = 4 #Vértice Inicial
 vertices_to_calculate = [14, 51, 67,70]  # Lista de vértices a calcular
 
-dijkstra_with_heuristic(grafo, start_vertex, vertices_to_calculate) #Chama a função de Dijkstra com Heurísticas, passando o grafo, vértice inicial e a lista de vértices que irá passar
+dijkstra_pond(grafo, start_vertex, vertices_to_calculate) #Chama a função de Dijkstra com Heurísticas, passando o grafo, vértice inicial e a lista de vértices que irá passar
