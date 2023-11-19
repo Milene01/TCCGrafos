@@ -153,7 +153,7 @@ grafo = {
     71: [(68,68), (70,164)],
 }
 
-start_vertex = 4 #Vértice Inicial
-vertices_to_calculate = [14, 51, 67,70]  # Lista de vértices a calcular
+start_vertex = #Vértice Inicial
+vertices_to_calculate = []  # Lista de vértices a calcular
 
 dijkstra_pond(grafo, start_vertex, vertices_to_calculate) #Chama a função de Dijkstra com Heurísticas, passando o grafo, vértice inicial e a lista de vértices que irá passar
